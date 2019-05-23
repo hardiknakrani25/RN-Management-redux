@@ -7,9 +7,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View>
+        <SafeAreaView>
           <Text>Hello!</Text>
-        </View>
+        </SafeAreaView>
       </Provider>
     );
   }
