@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { emailChanged } from "../actions";
 class LoginForm extends Component {
   onEmailChange = text => {
+    console.warn(this.props.email);
+
     this.props.emailChanged(text);
   };
 
@@ -15,6 +17,7 @@ class LoginForm extends Component {
             label="Email"
             placeholder="email@gmail.com"
             onChangeText={this.onEmailChange}
+            value={this.props.email}
           />
         </CardSection>
         <CardSection>
@@ -28,7 +31,13 @@ class LoginForm extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    email: state.auth.email
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { emailChanged }
 )(LoginForm);
