@@ -6,7 +6,7 @@ import reducers from "./reducers";
 import { firebaseConfig } from "../config";
 import firebase from "firebase";
 import ReduxThunk from "redux-thunk";
-
+import Router from "./router";
 import LoginForm from "./component/loginForm";
 
 class App extends Component {
@@ -17,9 +17,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
-        <SafeAreaView>
-          <LoginForm />
-        </SafeAreaView>
+        <Router />
       </Provider>
     );
   }
