@@ -40,6 +40,7 @@ class LoginForm extends Component {
         </CardSection>
         <CardSection>
           <Input
+            isPassword
             label="Password"
             placeholder="password"
             onChangeText={this.onPasswordChange}
