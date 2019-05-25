@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { Card, CardSection, Input, Button } from "./common";
-import { Connect } from "react-redux";
+import { connect } from "react-redux";
 import { employeeUpdate } from "../actions";
 class EmployeeCreate extends Component {
   render() {
@@ -42,4 +42,7 @@ const mapStateToProps = state => {
   return { name, phone, shift };
 };
 
-export default Connect(mapStateToProps, { employeeUpdate })(EmployeeCreate);
+export default connect(
+  mapStateToProps,
+  { employeeUpdate }
+)(EmployeeCreate);
